@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  background-image: url("./public/images/pattern-bg-desktop.png");
+  width: 100vw;
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#map {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 70vh;
+  z-index: 10;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Address Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  </head>
+  <body>
+    <main>
+      <div class="content py-5 relative flex flex-col">
+        <p class="text-xl md:text-3xl text-white text-center font-bold">IP Address Tracker</p>
+        <form class="w-full px-5 sm:w-[25rem] lg:w-[30rem] mx-auto mt-5">
+          <div class="flex">
+            <input id="search-form" type="text" class="rounded-none rounded-s-[0.5rem] bg-gray-50 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm py-2.5 px-5" placeholder="Search for any IP address or domain" />
+            <span id="search-btn" class="inline-flex items-center px-4 text-sm text-gray-900 bg-black border-gray-300 rounded-e-[0.5rem] cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" /></svg>
+            </span>
+          </div>
+        </form>
+        <div id="result-ip-address" class="absolute grid grid-cols-2 lg:grid-cols-4 gap-y-3 lg:gap-0 rounded-[0.5rem] w-full md:w-3/4 m-auto top-[8rem] md:top-[9.5rem] left-0 right-0 p-6 bg-white border border-gray-200 shadow z-30">
+          <div class="space-y-2 border-e-2 lg:border-e-2">
+            <p class="uppercase text-[#9b9b9b] text-xs font-bold">ip address</p>
+            <p id="field-ip-address" class="font-bold text-md md:text-xl tracking-wide">...</p>
+          </div>
+          <div class="space-y-2 lg:border-e-2 ms-3">
+            <p class="uppercase text-[#9b9b9b] text-xs font-bold">location</p>
+            <p id="field-location" class="font-bold text-md md:text-xl tracking-wide">...</p>
+          </div>
+          <div class="space-y-2 border-e-2 lg:border-e-2 ms-3">
+            <p class="uppercase text-[#9b9b9b] text-xs font-bold">time zone</p>
+            <p id="field-timezone" class="font-bold text-md md:text-xl tracking-wide">...</p>
+          </div>
+          <div class="space-y-2 ms-3">
+            <p class="uppercase text-[#9b9b9b] text-xs font-bold">isp</p>
+            <p id="field-isp" class="font-bold text-md md:text-xl tracking-wide">...</p>
+          </div>
+        </div>
+      </div>
+      <div id="map"></div>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
