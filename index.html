@@ -14,14 +14,18 @@
     <main>
       <div class="content py-5 relative flex flex-col">
         <p class="text-xl md:text-3xl text-white text-center font-bold">IP Address Tracker</p>
-        <form class="w-full px-5 sm:w-[25rem] lg:w-[30rem] mx-auto mt-5">
+        <div class="w-full px-5 sm:w-[25rem] lg:w-[30rem] mx-auto mt-5">
           <div class="flex">
-            <input id="search-form" type="text" class="rounded-none rounded-s-[0.5rem] bg-gray-50 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm py-2.5 px-5" placeholder="Search for any IP address or domain" />
+            <input id="search-form" type="text" class="rounded-none rounded-s-[0.5rem] bg-gray-50 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm py-2.5 px-5" placeholder="Search for any IP address" />
             <span id="search-btn" class="inline-flex items-center px-4 text-sm text-gray-900 bg-black border-gray-300 rounded-e-[0.5rem] cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" /></svg>
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" /></svg>
+              <svg class="loading-icon hidden" xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 24 24">
+                <path fill="#FFF" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z" opacity="0.5" />
+                <path fill="#FFF" d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z"><animateTransform attributeName="transform" dur="1s" from="0 12 12" repeatCount="indefinite" to="360 12 12" type="rotate" /></path>
+              </svg>
             </span>
           </div>
-        </form>
+        </div>
         <div id="result-ip-address" class="absolute grid grid-cols-2 lg:grid-cols-4 gap-y-3 lg:gap-0 rounded-[0.5rem] w-full md:w-3/4 m-auto top-[8rem] md:top-[9.5rem] left-0 right-0 p-6 bg-white border border-gray-200 shadow z-30">
           <div class="space-y-2 border-e-2 lg:border-e-2">
             <p class="uppercase text-[#9b9b9b] text-xs font-bold">ip address</p>
