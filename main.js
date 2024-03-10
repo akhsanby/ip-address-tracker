@@ -40,7 +40,7 @@ function onLoading() {
 }
 
 function updateResult(result) {
-  const { country, regionName, city, zip, timezone, isp, query, lat, lon } = result;
+  const { country, countryCode, regionName, city, zip, timezone, isp, query, lat, lon, org, as } = result;
 
   searchForm.value = query;
 
@@ -50,7 +50,26 @@ function updateResult(result) {
   fieldISP.innerText = isp;
 
   map.panTo(new L.LatLng(lat, lon));
-  L.marker([lat, lon], { icon: customIcon }).addTo(map);
+  L.marker([lat, lon], { icon: customIcon }).addTo(map).bindPopup(`
+    <dl class="max-w-md text-gray-900 space-y-2">
+      <div class="flex flex-col">
+          <dt class="mb-1 text-gray-500 text-xs">Country Code</dt>
+          <dd class="text-xs font-semibold">${countryCode}</dd>
+      </div>
+      <div class="flex flex-col">
+          <dt class="mb-1 text-gray-500 text-xs">Latitude & Longitude</dt>
+          <dd class="text-xs font-semibold">${lat}, ${lon}</dd>
+      </div>
+      <div class="flex flex-col">
+          <dt class="mb-1 text-gray-500 text-xs">Organization</dt>
+          <dd class="text-xs font-semibold">${org}</dd>
+      </div>
+      <div class="flex flex-col">
+          <dt class="mb-1 text-gray-500 text-xs">As</dt>
+          <dd class="text-xs font-semibold">${as}</dd>
+      </div>
+    </dl>
+  `);
 }
 
 searchButton.addEventListener("click", async function (e) {
